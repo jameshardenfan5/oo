@@ -2,30 +2,30 @@ package hw05;
 
 public class Car{
 
-	private String model, make;
-	private int year, mileage;
+	private String model,make;
+	private int year,mileage;
 	private float price;
 
-	public Car(float price, int year, int mileage, String make,String model) {
+	public Car(float price,int year,int mileage,String make,String model){
 
-		this.price = price;
-		this.year = year;
-		this.mileage = mileage;
+		this.price=price;
+		this.year=year;
+		this.mileage=mileage;
 		this.model=model;
 		this.make=make;
 	}
 	
-	public float getPrice() {
+	public float getPrice(){
 
 		return price;
 	}
 
-	public int getYear() {
+	public int getYear(){
 
 		return year;
 	}
 
-	public int getMileage() {
+	public int getMileage(){
 
 		return mileage;
 	}
@@ -35,7 +35,7 @@ public class Car{
 		return make;
 	}	
 
-	public String getModel() {
+	public String getModel(){
 
 		return model;
 	}
