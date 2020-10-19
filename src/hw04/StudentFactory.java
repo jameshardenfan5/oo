@@ -1,24 +1,24 @@
 package hw04;
 
-public class StudentFactory {
+public class StudentFactory{
 
-	public StudentFactory() {
+	public StudentFactory(){
 
 	}
 
-	public Student createInStateStudent(String name, String usAddr) {
-		return new Student(name,usAddr, -1, -1,null, StudentStatus.INSTATE);
+	public Student createInStateStudent(String name,String usAddr){
+		return new Student(name,usAddr,-1,-1,null, StudentStatus.INSTATE);
 	}
 
-	public Student createOutStateStudent(String name, String usAddr, int yrsInState) {
-		return new Student(name, usAddr, yrsInState, -1,null, StudentStatus.OUTSTATE);
+	public Student createOutStateStudent(String name,String usAddr,int yrsInState){
+		return new Student(name,usAddr,yrsInState,-1,null,StudentStatus.OUTSTATE);
 	}
 
-	public Student createIntlStudent(String name, String usAddr,int i20num,String foreignAddr) {
-		return new Student(name, usAddr, -1,i20num, foreignAddr, StudentStatus.INTL);
+	public Student createIntlStudent(String name, String usAddr,int i20num,String foreignAddr){
+		return new Student(name,usAddr,-1,i20num,foreignAddr,StudentStatus.INTL);
 	}
 
-	protected class Student {
+	protected class Student{
 
 		float tuition;
 		String name;
@@ -28,48 +28,47 @@ public class StudentFactory {
 		String foreignAddr;
 		StudentStatus status;
 
-		protected Student(String name, String usAddr, int yrsInState, int i20num,  String foreignAddr, StudentStatus status){
+		protected Student(String name,String usAddr,int yrsInState,int i20num, String foreignAddr,StudentStatus status){
 
-			this.name = name;
-			this.usAddr = usAddr;
-			if (yrsInState != -1) {
-				this.yrsInState = yrsInState;
+			this.name=name;
+			this.usAddr=usAddr;
+			if (yrsInState!=-1){
+				this.yrsInState=yrsInState;
 			}
-			if (i20num != -1) {
-				this.i20num = i20num;
+			if (i20num!=-1){
+				this.i20num=i20num;
 			}
-			this.foreignAddr = foreignAddr;
-			this.status = status;
+			this.foreignAddr=foreignAddr;
+			this.status=status;
 		}
 
-		public String getName() {
+		public String getName(){
 
 			return name;
 		}
 
-		public String getUsAddr() {
-
+		public String getUsAddr(){
 
 			return usAddr;
 		}
 
-		public int getYrsInState() {
+		public int getYrsInState(){
 
 			return yrsInState;
 		}
 
-		public int geti20num() {
+		public int geti20num(){
 
 			return i20num;
 		}
 
-		public String getForeignAddr() {
+		public String getForeignAddr(){
 
 
 			return foreignAddr;
 		}
 
-		public StudentStatus getStatus() {
+		public StudentStatus getStatus(){
 
 			return status;
 		}
