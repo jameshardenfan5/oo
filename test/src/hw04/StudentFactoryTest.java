@@ -36,7 +36,7 @@ public class StudentFactoryTest{
 	}
 
 	@Test
-	public void testCreateIntlStudentNameAddri20foreignAddr(){
+	public void CreateIntlStudentNameAddri20foreignAddr(){
 
 		StudentFactory.Student student=factory.createIntlStudent(name,usAddr, i20num,foreignAddr);
 		assertNotNull(student);
