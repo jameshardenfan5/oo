@@ -64,7 +64,6 @@ public class StudentFactory{
 
 		public String getForeignAddr(){
 
-
 			return foreignAddr;
 		}
 
