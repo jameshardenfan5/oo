@@ -3,19 +3,19 @@ package hw04;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-public class StudentFactoryTest {
+public class StudentFactoryTest{
 
-	private final String name = "Tyler Browbay";
-	private final String usAddr = "11 America st";
-	private final int i20num = 49;
-	private final int yrsInState = 2;
-	private final String foreignAddr = "12 somethibg St";
+	private final String name="Tyler Browbay";
+	private final String usAddr="11 America st";
+	private final int i20num=49;
+	private final int yrsInState=2;
+	private final String foreignAddr="12 somethibg St";
 	StudentFactory factory=new StudentFactory();
 
 	@Test
-	public void testCreateInStateStudent() {
+	public void CreateInStateStudentwithNameAddress(){
 
-		StudentFactory.Student student = factory.createInStateStudent(name,usAddr);
+		StudentFactory.Student student=factory.createInStateStudent(name,usAddr);
 		assertNotNull(student);
 		assertEquals(student.getName(),name);
 		assertEquals(student.getUsAddr(),usAddr);
@@ -24,9 +24,9 @@ public class StudentFactoryTest {
 	}
 
 	@Test
-	public void testCreateOutStateStudent() {
+	public void CreateOutStateStudentwithNameAddrYearsinState(){
 
-		StudentFactory.Student student = factory.createOutStateStudent(name,usAddr,yrsInState);
+		StudentFactory.Student student=factory.createOutStateStudent(name,usAddr,yrsInState);
 		assertNotNull(student);
 		assertEquals(student.getName(),name);
 		assertEquals(student.getUsAddr(),usAddr);
@@ -36,9 +36,9 @@ public class StudentFactoryTest {
 	}
 
 	@Test
-	public void testCreateIntlStudent() {
+	public void testCreateIntlStudentNameAddri20foreignAddr(){
 
-		StudentFactory.Student student = factory.createIntlStudent(name,usAddr, i20num,foreignAddr);
+		StudentFactory.Student student=factory.createIntlStudent(name,usAddr, i20num,foreignAddr);
 		assertNotNull(student);
 		assertEquals(student.getName(),name);
 		assertEquals(student.getUsAddr(),usAddr);
