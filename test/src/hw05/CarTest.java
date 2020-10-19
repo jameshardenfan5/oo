@@ -3,7 +3,7 @@ package hw05;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-public class CarTest {
+public class CarTest{
 
 	private String[] carToStringArray(Car car){
 
