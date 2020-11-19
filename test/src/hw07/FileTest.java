@@ -9,9 +9,9 @@ public class FileTest{
 
     private String[] fileToStringArray(File f){
 
-        String[] fileInfo={String.valueOf(f.isDirectory()),f.getName(),Integer.toString(f.getSize()),f.getCreationTime().toString(),f.getParent().getName()};
+        String[] array={String.valueOf(f.isDirectory()),f.getName(),Integer.toString(f.getSize()),f.getCreationTime().toString(),f.getParent().getName()};
 
-        return fileInfo;
+        return array;
     }
 
     private static Directory root;
