@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<project name="Antapp" basedir="." default="clean">
+
+	<property environment="env" />
+	
+	<path id="classpath">
+		<pathelement path="${env.JUNIT}" />
+		<pathelement path="bin" />
+		<pathelement path="test/bin" />
+	</path>
+
+	<target name="init">
+		<mkdir dir="bin/hw08" />
+		<mkdir dir="test/bin/hw08" />
+		<mkdir dir="test/reports/hw08" />		
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="src/hw08" destdir="bin" includeantruntime="false" />
+		<javac srcdir="test/src/hw08" destdir="test/bin" includeantruntime="false">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="test" depends="compile">
+		<junitlauncher printSummary="true">
+			<classpath refid="classpath" />
+			<testclasses outputdir="test/reports/hw08">
+				<fileset dir="test/bin">
+					<include name="hw08/*Test.class"/>
+				</fileset>
+				<listener type="legacy-plain" sendSysOut="true"/>
+			</testclasses>
+		</junitlauncher>
+	</target>
+	
+	<target name="run" depends="test">
+	</target>
+	
+	<target name="clean" depends="run">
+		<delete includeemptydirs="true">
+			<fileset dir="bin/hw08" includes="**/*"/>
+			<fileset dir="test/bin/hw08" includes="**/*" />
+		</delete>
+	</target>
+
+</project>
