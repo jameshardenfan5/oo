@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-class DirectoryTest{
+public class DirectoryTest{
 
     private String[] dirToStringArray(Directory dir){
 
