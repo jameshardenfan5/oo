@@ -4,24 +4,20 @@ import java.time.LocalDateTime;
 import java.util.LinkedList;
 
 public abstract class FileSystem {
+
     protected String name;
     protected int capacity;
-    protected int id;
-    protected LinkedList<FSElement> rootDir = new LinkedList<FSElement>();
+	protected int id;
+    protected LinkedList<FSElement> dirs = new LinkedList<FSElement>();
 
     protected abstract FSElement createDefaultRoot();
 
+
+
     protected void setRoot(FSElement root){
-        rootDir.add( root);
 
+        dirs.add(root);
     }
-	/*
-    public LinkedList<Directory> getRootDirs(){
-
-        return dirs;
-    }
-	*/
-
 
     protected int getCapacity(){
         return capacity;
@@ -29,10 +25,6 @@ public abstract class FileSystem {
 
     public String getName(){
         return name;
-    }
-
-    public int getId(){
-        return id;
     }
 
     public FSElement initFileSystem(String name, int capacity){
