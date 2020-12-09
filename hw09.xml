@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<project name="Antapp" basedir="." default="clean">
+
+	<property environment="env" />
+	
+	<path id="classpath">
+		<pathelement path="${env.JUNIT}" />
+		<pathelement path="bin" />
+		<pathelement path="test/bin" />
+	</path>
+
+	<target name="init">
+		<mkdir dir="bin/hw09/fs" />
+		<mkdir dir="bin/hw09/apfs" />	
+		<mkdir dir="test/bin/hw09/apfs" />
+		<mkdir dir="test/reports/hw09" />
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="src/hw09/fs" destdir="bin" includeantruntime="false" />
+		<javac srcdir="src/hw09/apfs" destdir="bin" includeantruntime="false" />
+		<javac srcdir="test/src/hw09/apfs" destdir="test/bin" includeantruntime="false">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="test" depends="compile">
+		<junitlauncher printSummary="true">
+			<classpath refid="classpath" />
+			<testclasses outputdir="test/reports/hw09">
+				<fileset dir="test/bin">
+					<include name="hw09/apfs/*Test.class"/>
+				</fileset>
+				<listener type="legacy-plain" sendSysOut="true"/>
+			</testclasses>
+		</junitlauncher>
+	</target>
+	
+	<target name="run" depends="test">
+	</target>
+	
+	<target name="clean" depends="run">
+		<delete includeemptydirs="true">
+			<fileset dir="bin/hw09" includes="**/*"/>
+			<fileset dir="test/bin/hw09" includes="**/*" />
+		</delete>
+	</target>
+
+</project>
