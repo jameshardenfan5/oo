@@ -30,24 +30,7 @@ public class ApfsElement extends FSElement{
     public String getsum(){
         return sum;
     }
-
-	/*
-    public int getSize(){ 
-
-		return this.size;
-
-	}
-
-
-
-    public LinkedList<ApfsElement> getChildren(){
-        return this.ApfsChildren;
-    }
-
-    public void appendChild(FSElement child){
-        this.ApfsChildren.add((ApfsElement) child);
-    }
-	*/
+	
     public boolean isDirectory(){
 
         return true;
