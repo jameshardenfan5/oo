@@ -53,7 +53,19 @@ public class ApfsCountingVisitorTest {
         home.appendChild(x);
         code.appendChild(y);
     }
+	
+    @Test
+    public void fourdirs(){
 
+        ApfsCountingVisitor visitor=new ApfsCountingVisitor();
+
+        root.accept(visitor);
+        int actual=visitor.dircount();
+        int expected=4;
+
+        assertEquals(expected, actual);
+    }
+	
     @Test
     public void sixfiles(){
 
@@ -74,18 +86,6 @@ public class ApfsCountingVisitorTest {
         root.accept(visitor);
         int actual=visitor.linkcount();
         int expected=2;
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    public void fourdirs(){
-
-        ApfsCountingVisitor visitor=new ApfsCountingVisitor();
-
-        root.accept(visitor);
-        int actual=visitor.dircount();
-        int expected=4;
 
         assertEquals(expected, actual);
     }
