@@ -25,7 +25,7 @@ public class ApfsFileSearchVisitor implements ApfsVisitor {
 
     public void visit(ApfsFile file){
 
-        if(file.getName().equals(name)){
+        if(file.getName()==name){
             list.add(file);
         }
     }
