@@ -7,11 +7,6 @@ public class ApfsFileCrawlingVisitor implements ApfsVisitor{
 
     private LinkedList<ApfsFile> quarantine=new LinkedList<ApfsFile>();
 
-    public void visit(ApfsLink link){
-
-        return;
-    }
-
     public void visit(ApfsDirectory dir){
 
         return;
@@ -20,6 +15,11 @@ public class ApfsFileCrawlingVisitor implements ApfsVisitor{
     public void visit(ApfsFile file){
 
         quarantine.add(file);
+    }
+    
+    public void visit(ApfsLink link){
+
+        return;
     }
 
     public LinkedList<ApfsFile> getlist(){
