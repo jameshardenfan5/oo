@@ -13,11 +13,6 @@ public class ApfsFileSearchVisitor implements ApfsVisitor {
         this.name=name;
     }
 
-    public void visit(ApfsLink link){
-
-        return;
-    }
-
     public void visit(ApfsDirectory dir){
 
         return;
@@ -29,7 +24,11 @@ public class ApfsFileSearchVisitor implements ApfsVisitor {
             list.add(file);
         }
     }
+    public void visit(ApfsLink link){
 
+        return;
+    }
+    
     public LinkedList<ApfsFile> filelist(){
 
         return list;
