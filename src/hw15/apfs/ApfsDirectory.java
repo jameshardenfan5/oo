@@ -55,6 +55,7 @@ public class ApfsDirectory extends ApfsElement{
                 files.add((ApfsFile)child);
             }
         }
+        files.sort(c);
         return files;
     }
 /*
