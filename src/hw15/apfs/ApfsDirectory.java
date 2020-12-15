@@ -27,9 +27,9 @@ public class ApfsDirectory extends ApfsElement{
         return this.children.size();
     }
 
-    public LinkedList<ApfsDirectory> getSubDirectories(){
+    public LinkedList<ApfsDirectory> getSubDirectories(Comparator<ApfsElement> c){
 
-        Iterator<ApfsElement> childs=children.iterator();
+        Iterator<ApfsElement> childs=getChildren(c).iterator();
         LinkedList<ApfsDirectory> dirs=new LinkedList<ApfsDirectory>();
 
         while(childs.hasNext()){
@@ -40,6 +40,7 @@ public class ApfsDirectory extends ApfsElement{
                 dirs.add((ApfsDirectory)child);
             }
         }
+		dirs.sort(c);
         return dirs;
     }
     public LinkedList<ApfsFile> getFiles(Comparator<ApfsElement> c){
