@@ -59,29 +59,7 @@ public class ApfsDirectory extends ApfsElement{
         files.sort(c);
         return files;
     }
-/*
-    public int getTotalSize(){
 
-         int size=0;
-         Iterator<ApfsFile> files=getFiles().iterator();
-         Iterator<ApfsDirectory> dirs=getSubDirectories().iterator();
-
-         while(files.hasNext()){
-
-            ApfsFile file=files.next();
-
-            size=size+file.getSize();
-         }
-
-         while(dirs.hasNext()){
-
-            ApfsDirectory dir=dirs.next();
-
-            size=size+dir.getTotalSize();
-         }
-         return size;
-    }
-*/
     public boolean isDirectory(){
         return true;
     }
