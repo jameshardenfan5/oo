@@ -46,9 +46,18 @@ public class Car{
 
         for(int i=0;i<cars.size();i++){
 
-            if(this.year <= cars.get(i).getYear() && this.price >= cars.get(i).getPrice() && this.mileage >= cars.get(i).getMileage() && (this.year < cars.get(i).getYear() || this.price > cars.get(i).getPrice() || this.mileage > cars.get(i).getMileage())){
+			int bool = (this.year != cars.get(i).getYear() || this.price != cars.get(i).getPrice() || this.mileage != cars.get(i).getMileage()) ? 1 : 0;
 
-                    this.domcount++;
+            switch(bool){
+				case 1:
+					if(this.price >= cars.get(i).getPrice()){ 
+						if(this.mileage >= cars.get(i).getMileage()){
+							if(this.year <= cars.get(i).getYear()){
+								this.domcount++;
+							}
+						}
+					}
+					break;
             }
         }
     }
