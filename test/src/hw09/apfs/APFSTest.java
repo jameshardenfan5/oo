@@ -14,15 +14,6 @@ public class APFSTest{
     }
 
     @Test
-    public void ApfsSingletonEquality(){
-
-        APFS apfs = APFS.getInstance();
-        APFS apfs1 = APFS.getInstance();
-
-        assertSame(apfs1,apfs);
-    }
-
-    @Test
     public void DefaultRoot(){
 
         String[] expected = {"true", "root", "0",  "0", "0"};
