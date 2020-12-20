@@ -11,18 +11,10 @@ class DirectoryTest{
 
     private String[] dirToStringArray(Directory dir){
 
-        if(dir.getName().equals("root")){
+        String[] dirarray={String.valueOf(dir.isDirectory()),dir.getName(),Integer.toString(dir.getSize()),dir.getCreationTime().toString(),dir.getParent().getName(),Integer.toString(dir.countChildren()),Integer.toString(dir.getTotalSize())};
 
-            String[] dirarray={String.valueOf(dir.isDirectory()),dir.getName(),Integer.toString(dir.getSize()),dir.getCreationTime().toString(),null,Integer.toString(dir.countChildren()),Integer.toString(dir.getTotalSize())};
-
-            return dirarray;
-        }
-        else{
-
-            String[] dirarray={String.valueOf(dir.isDirectory()),dir.getName(),Integer.toString(dir.getSize()),dir.getCreationTime().toString(),dir.getParent().getName(),Integer.toString(dir.countChildren()),Integer.toString(dir.getTotalSize())};
-
-            return dirarray;
-        }
+        return dirarray;
+    
     }
 
     private static Directory root;
@@ -67,7 +59,9 @@ class DirectoryTest{
 
         String[] expected={"true","root","0",String.valueOf(time),null,"2","6"};
 
-        assertArrayEquals(expected, dirToStringArray(root));
+		String[] actual={String.valueOf(root.isDirectory()),root.getName(),Integer.toString(root.getSize()),root.getCreationTime().toString(),null,Integer.toString(root.countChildren()),Integer.toString(root.getTotalSize())};
+
+		assertArrayEquals(expected,actual);
 
         String[] expected_subs={"home","applications"};
         LinkedList<Directory> subs_list;
