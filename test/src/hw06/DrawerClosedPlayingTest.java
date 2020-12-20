@@ -18,7 +18,7 @@ public class DrawerClosedPlayingTest{
 	}
 
 	@Test
-	public void OpenCloseButtonPushedwhileplaying(){
+	public void pressopen(){
 
 		DVDPlayer.getInstance().changeState(DrawerClosedPlaying.getInstance());
 		DrawerClosedNotPlaying.getInstance().openCloseButtonPushed();
@@ -26,7 +26,7 @@ public class DrawerClosedPlayingTest{
 	}
 
 	@Test
-	public void PlayButtonPushedwhilePlaying(){
+	public void pressplay(){
 
 		DVDPlayer.getInstance().changeState(DrawerClosedPlaying.getInstance());
 
@@ -38,7 +38,7 @@ public class DrawerClosedPlayingTest{
 	}
 
 	@Test
-	public void StopButtonPushedwhilePlaying(){
+	public void pressstop(){
 
 		DVDPlayer.getInstance().changeState(DrawerClosedPlaying.getInstance());
 		DrawerClosedPlaying.getInstance().stopButtonPushed();
