@@ -12,7 +12,7 @@ public class DJIAQuoteObservable{
 	}
 
 	public void notifyObservers(DJIAEvent event){
-		for(int j=0;j<=i;j++){
+		for(int j=0;j<i;j++){
 
 			observers[j].updateDJIA(event);
 		}
