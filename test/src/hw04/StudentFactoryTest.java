@@ -19,12 +19,12 @@ public class StudentFactoryTest {
             return studentarray;
 	}
 
-	private String name = "Tyler Browbay";
-	private String usAddr = "11 America st";
-	private int i20num = 49;
-	private int yrsInState = 2;
-	private String foreignAddr = "12 somethibg St";
 	StudentFactory factory=new StudentFactory();
+	String name="Tyler Browbay";
+	String usAddr="11 America st";
+	int i20num=49;
+	int yrsInState=2;
+	String foreignAddr="12 somethibg St";
 
 	@Test
 	public void CreateInStateStudentwithNameAddress() {
