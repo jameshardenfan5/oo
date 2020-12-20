@@ -20,10 +20,15 @@ public class ApfsFileSearchVisitor implements ApfsVisitor {
 
     public void visit(ApfsFile file){
 
-        if(file.getName()==name){
-            list.add(file);
+		int bool = (file.getName()==name) ? 1 : 0;
+
+        switch(bool){
+			case 1:
+				list.add(file);
+			break;
         }
     }
+    
     public void visit(ApfsLink link){
 
         return;
