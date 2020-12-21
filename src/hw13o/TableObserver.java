@@ -1,4 +1,4 @@
-package hw13o;
+package hw13observe;
 
 import java.util.Observable;
 import java.util.Observer;
