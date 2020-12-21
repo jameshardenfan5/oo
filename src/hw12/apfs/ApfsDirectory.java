@@ -15,6 +15,7 @@ public class ApfsDirectory extends ApfsElement{
     private LinkedList<ApfsElement> children = new LinkedList<ApfsElement>();
 
     public LinkedList<ApfsElement> getChildren(Comparator<ApfsElement> c){
+
         this.children.sort(c);
         return this.children;
     }
@@ -29,59 +30,30 @@ public class ApfsDirectory extends ApfsElement{
 
     public LinkedList<ApfsDirectory> getSubDirectories(Comparator<ApfsElement> c){
 
-        Iterator<ApfsElement> childs=getChildren(c).iterator();
         LinkedList<ApfsDirectory> dirs=new LinkedList<ApfsDirectory>();
+		LinkedList<ApfsElement> elements=getChildren(c);
+		for(int i=0;i<elements.size();i++){
 
-        while(childs.hasNext()){
-
-            ApfsElement child=childs.next();
-
-            if(child.isDirectory()==true){
-                dirs.add((ApfsDirectory)child);
+            if(elements.get(i).isDirectory()==true){
+                dirs.add((ApfsDirectory)elements.get(i));
             }
         }
-		dirs.sort(c);
         return dirs;
     }
     public LinkedList<ApfsFile> getFiles(Comparator<ApfsElement> c){
 
-        Iterator<ApfsElement> childs=getChildren(c).iterator();
         LinkedList<ApfsFile> files=new LinkedList<ApfsFile>();
+		LinkedList<ApfsElement> elements=getChildren(c);
 
-        while(childs.hasNext()){
+		for(int j=0;j<elements.size();j++){
 
-            ApfsElement child=childs.next();
-
-            if(child.isFile()==true){
-                files.add((ApfsFile)child);
+            if(elements.get(j).isFile()==true){
+                files.add((ApfsFile)elements.get(j));
             }
         }
-		files.sort(c);
         return files;
     }
-/*
-    public int getTotalSize(){
 
-         int size=0;
-         Iterator<ApfsFile> files=getFiles().iterator();
-         Iterator<ApfsDirectory> dirs=getSubDirectories().iterator();
-
-         while(files.hasNext()){
-
-            ApfsFile file=files.next();
-
-            size=size+file.getSize();
-         }
-
-         while(dirs.hasNext()){
-
-            ApfsDirectory dir=dirs.next();
-
-            size=size+dir.getTotalSize();
-         }
-         return size;
-    }
-*/
     public boolean isDirectory(){
         return true;
     }
