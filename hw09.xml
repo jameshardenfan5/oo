@@ -13,7 +13,9 @@
 	<target name="init">
 		<mkdir dir="bin/hw09/fs" />
 		<mkdir dir="bin/hw09/apfs" />	
+		<mkdir dir="bin/hw09/fat" />	
 		<mkdir dir="test/bin/hw09/apfs" />
+		<mkdir dir="test/bin/hw09/fat" />
 		<mkdir dir="test/reports/hw09" />
 	</target>
 
@@ -25,12 +27,20 @@
 		</javac>
 	</target>
 
-	<target name="test" depends="compile">
+	<target name="compile2" depends="compile">
+		<javac srcdir="src/hw09/fat" destdir="bin" includeantruntime="false" />
+		<javac srcdir="test/src/hw09/fat" destdir="test/bin" includeantruntime="false">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="test" depends="compile2">
 		<junitlauncher printSummary="true">
 			<classpath refid="classpath" />
 			<testclasses outputdir="test/reports/hw09">
 				<fileset dir="test/bin">
 					<include name="hw09/apfs/*Test.class"/>
+					<include name="hw09/fat/*Test.class"/>
 				</fileset>
 				<listener type="legacy-plain" sendSysOut="true"/>
 			</testclasses>
