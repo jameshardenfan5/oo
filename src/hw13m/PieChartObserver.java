@@ -7,13 +7,13 @@ public class PieChartObserver implements DJIAQuoteObserver,StockQuoteObserver{
 
     public void updateDJIA(DJIAEvent x){
 
-			this.djia=((DJIAEvent)x).getDJIA();
+			this.djia=x.getDJIA();
 	}
 
 	public void updateStock(StockEvent y){
 
-        this.stockticker=((StockEvent)y).getTicker();
-        this.quote=((StockEvent)y).getQuote();
+        this.stockticker=y.getTicker();
+        this.quote=y.getQuote();
 	}
 
 	public String piedisplayticker(){
