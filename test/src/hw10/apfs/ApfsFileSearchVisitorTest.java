@@ -72,4 +72,92 @@ public class ApfsFileSearchVisitorTest{
 
         assertArrayEquals(expected,actual);
     }
+
+    @Test
+    public void searchforfilee() {
+
+        ApfsFileSearchVisitor visitor = new ApfsFileSearchVisitor("e");
+
+        root.accept(visitor);
+
+        LinkedList<ApfsFile> files=visitor.filelist();
+
+		String[] actual=new String[1];
+
+		actual[0]=files.get(0).getName();
+
+        String[] expected={"e"};
+
+        assertArrayEquals(expected,actual);
+    }
+    @Test
+    public void searchforfiled() {
+
+        ApfsFileSearchVisitor visitor = new ApfsFileSearchVisitor("d");
+
+        root.accept(visitor);
+
+        LinkedList<ApfsFile> files=visitor.filelist();
+
+		String[] actual=new String[1];
+
+		actual[0]=files.get(0).getName();
+
+        String[] expected={"d"};
+
+        assertArrayEquals(expected,actual);
+    }
+
+    @Test
+    public void searchforfilec() {
+
+        ApfsFileSearchVisitor visitor = new ApfsFileSearchVisitor("c");
+
+        root.accept(visitor);
+
+        LinkedList<ApfsFile> files=visitor.filelist();
+
+		String[] actual=new String[1];
+
+		actual[0]=files.get(0).getName();
+
+        String[] expected={"c"};
+
+        assertArrayEquals(expected,actual);
+    }
+    @Test
+    public void searchforfileb() {
+
+        ApfsFileSearchVisitor visitor = new ApfsFileSearchVisitor("b");
+
+        root.accept(visitor);
+
+        LinkedList<ApfsFile> files=visitor.filelist();
+
+		String[] actual=new String[1];
+
+		actual[0]=files.get(0).getName();
+
+        String[] expected={"b"};
+
+        assertArrayEquals(expected,actual);
+    }
+
+    @Test
+    public void searchforfilea() {
+
+        ApfsFileSearchVisitor visitor = new ApfsFileSearchVisitor("a");
+
+        root.accept(visitor);
+
+        LinkedList<ApfsFile> files=visitor.filelist();
+
+		String[] actual=new String[1];
+
+		actual[0]=files.get(0).getName();
+
+        String[] expected={"a"};
+
+        assertArrayEquals(expected,actual);
+    }
 }
