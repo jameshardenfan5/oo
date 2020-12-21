@@ -1,4 +1,4 @@
-package hw13o;
+package hw13observe;
 
 public class StockEvent{
     private String ticker;
