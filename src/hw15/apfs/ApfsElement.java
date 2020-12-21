@@ -8,7 +8,6 @@ public class ApfsElement extends FSElement{
 
 	private String owner,sum;
     private LocalDateTime lastModified;
-    private LinkedList<ApfsElement> ApfsChildren = new LinkedList<ApfsElement>();
 
     public ApfsElement(ApfsDirectory parent, String name, int size, LocalDateTime creationTime, String owner,LocalDateTime lastModified,String sum){
         super(parent, name, size, creationTime);
