@@ -38,31 +38,22 @@ public class ApfsDirectory extends ApfsElement{
     }
 
     public LinkedList<ApfsDirectory> getSubDirectories(){
-
-        Iterator<ApfsElement> childs=children.iterator();
         LinkedList<ApfsDirectory> dirs=new LinkedList<ApfsDirectory>();
+		for(int i=0;i<children.size();i++){
 
-        while(childs.hasNext()){
-
-            ApfsElement child=childs.next();
-
-            if(child.isDirectory()==true){
-                dirs.add((ApfsDirectory)child);
+            if(children.get(i).isDirectory()==true){
+                dirs.add((ApfsDirectory)children.get(i));
             }
         }
         return dirs;
     }
+
     public LinkedList<ApfsFile> getFiles(){
-
-        Iterator<ApfsElement> childs=children.iterator();
         LinkedList<ApfsFile> files=new LinkedList<ApfsFile>();
+		for(int j=0;j<children.size();j++){
 
-        while(childs.hasNext()){
-
-            ApfsElement child=childs.next();
-
-            if(child.isFile()==true){
-                files.add((ApfsFile)child);
+            if(children.get(j).isFile()==true){
+                files.add((ApfsFile)children.get(j));
             }
         }
         return files;
@@ -70,24 +61,22 @@ public class ApfsDirectory extends ApfsElement{
 
     public int getTotalSize(){
 
-         int size=0;
-         Iterator<ApfsFile> files=getFiles().iterator();
-         Iterator<ApfsDirectory> dirs=getSubDirectories().iterator();
+        LinkedList<ApfsDirectory> dirs=getSubDirectories();
+        LinkedList<ApfsFile> files=getFiles();
+		int totalsize=0;
+		int dirsize=0;
+        int filesize=0;
+		for(int k=0;k<dirs.size();k++){
 
-         while(files.hasNext()){
+			dirsize=dirsize+dirs.get(k).getTotalSize();
+        }
+		for(int m=0;m<files.size();m++){
 
-            ApfsFile file=files.next();
+			filesize=filesize+files.get(m).getSize();
+        }
+		totalsize=filesize+dirsize;
 
-            size=size+file.getSize();
-         }
-
-         while(dirs.hasNext()){
-
-            ApfsDirectory dir=dirs.next();
-
-            size=size+dir.getTotalSize();
-         }
-         return size;
+        return totalsize;
     }
 
     public boolean isDirectory(){
