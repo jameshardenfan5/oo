@@ -5,10 +5,7 @@ import hw09.fs.*;
 
 public class fat extends FileSystem{
 
-    private LocalDateTime creationTime=LocalDateTime.now();
-    private LocalDateTime lastModified=LocalDateTime.now();
     protected static fat inst = null;
-    private String name;
     protected fatDirectory root;
 
     public static fat getInstance(){
@@ -22,7 +19,7 @@ public class fat extends FileSystem{
 
     protected fatDirectory createDefaultRoot() {
 
-        root = new fatDirectory(null, "root", 0, creationTime, "Suzuki", lastModified,"1234abcd");
+        root = new fatDirectory(null, "root", 0,LocalDateTime.now(), "Suzuki", LocalDateTime.now(),"1234abcd");
 
         return root;
     }
