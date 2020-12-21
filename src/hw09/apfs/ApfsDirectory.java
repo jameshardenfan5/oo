@@ -2,7 +2,6 @@ package hw09.apfs;
 
 import java.time.LocalDateTime;
 import java.util.LinkedList;
-import java.util.Iterator;
 import hw09.fs.*;
 
 public class ApfsDirectory extends ApfsElement{
