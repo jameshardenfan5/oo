@@ -5,12 +5,12 @@ import hw10.fs.*;
 
 public class ApfsFileSearchVisitor implements ApfsVisitor {
 
-    private String name;
+    private String str;
     private LinkedList<ApfsFile> list=new LinkedList<ApfsFile>();
 
-    public ApfsFileSearchVisitor(String name){
+    public ApfsFileSearchVisitor(String str){
 
-        this.name=name;
+        this.str=str;
     }
 
     public void visit(ApfsDirectory dir){
@@ -20,7 +20,7 @@ public class ApfsFileSearchVisitor implements ApfsVisitor {
 
     public void visit(ApfsFile file){
 
-		int bool = (file.getName()==name) ? 1 : 0;
+		int bool = (file.getName()==str) ? 1 : 0;
 
         switch(bool){
 			case 1:
