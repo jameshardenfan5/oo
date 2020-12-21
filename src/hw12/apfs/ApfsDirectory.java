@@ -2,7 +2,6 @@ package hw12.apfs;
 
 import java.time.LocalDateTime;
 import java.util.LinkedList;
-import java.util.Iterator;
 import hw12.fs.*;
 import java.util.Comparator;
 
