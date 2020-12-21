@@ -74,17 +74,15 @@ public class DirectoryTest{
 
         subs_list=root.getSubDirectories();
 
-        Iterator<Directory> subs_it=subs_list.iterator();
         String[] actual_subs=new String[2];
         int i=0;
 
-        while(subs_it.hasNext()){
+		for(i=0;i<subs_list.size();i++){
 
-            Directory sub=subs_it.next();
+            actual_subs[i]=subs_list.get(i).getName();
 
-            actual_subs[i]=sub.getName();
-            i++;
-        }
+
+		}
         assertArrayEquals(expected_subs,actual_subs);
 
         String[] expected_files={};
@@ -92,17 +90,15 @@ public class DirectoryTest{
 
         files_list=root.getFiles();
 
-        Iterator<File> files_it=files_list.iterator();
         String[] actual_files=new String[0];
         int j=0;
 
-        while(files_it.hasNext()){
+		for(j=0;j<files_list.size();j++){
 
-            File file=files_it.next();
+            actual_files[j]=files_list.get(j).getName();
 
-            actual_files[j]=file.getName();
-            j++;
-        }
+
+		}
         assertArrayEquals(expected_files,actual_files);
 
     }
@@ -119,17 +115,15 @@ public class DirectoryTest{
 
         subs_list=home.getSubDirectories();
 
-        Iterator<Directory> subs_it=subs_list.iterator();
         String[] actual_subs=new String[1];
         int i=0;
 
-        while(subs_it.hasNext()){
+		for(i=0;i<subs_list.size();i++){
 
-            Directory sub=subs_it.next();
+            actual_subs[i]=subs_list.get(i).getName();
 
-            actual_subs[i]=sub.getName();
-            i++;
-        }
+
+		}
         assertArrayEquals(expected_subs,actual_subs);
 
         String[] expected_files={"c","d"};
@@ -137,17 +131,15 @@ public class DirectoryTest{
 
         files_list=home.getFiles();
 
-        Iterator<File> files_it=files_list.iterator();
         String[] actual_files=new String[2];
         int j=0;
 
-        while(files_it.hasNext()){
+		for(j=0;j<files_list.size();j++){
 
-            File file=files_it.next();
+            actual_files[j]=files_list.get(j).getName();
 
-            actual_files[j]=file.getName();
-            j++;
-        }
+
+		}
         assertArrayEquals(expected_files,actual_files);
     }
 
@@ -163,17 +155,15 @@ public class DirectoryTest{
 
         subs_list=applications.getSubDirectories();
 
-        Iterator<Directory> subs_it=subs_list.iterator();
         String[] actual_subs=new String[0];
         int i=0;
 
-        while(subs_it.hasNext()){
+		for(i=0;i<subs_list.size();i++){
 
-            Directory sub=subs_it.next();
+            actual_subs[i]=subs_list.get(i).getName();
 
-            actual_subs[i]=sub.getName();
-            i++;
-        }
+
+		}
         assertArrayEquals(expected_subs,actual_subs);
 
         String[] expected_files={"a","b"};
@@ -181,17 +171,15 @@ public class DirectoryTest{
 
         files_list=applications.getFiles();
 
-        Iterator<File> files_it=files_list.iterator();
         String[] actual_files=new String[2];
         int j=0;
 
-        while(files_it.hasNext()){
+		for(j=0;j<files_list.size();j++){
 
-            File file=files_it.next();
+            actual_files[j]=files_list.get(j).getName();
 
-            actual_files[j]=file.getName();
-            j++;
-        }
+
+		}
         assertArrayEquals(expected_files,actual_files);
     }
 
@@ -207,17 +195,15 @@ public class DirectoryTest{
 
         subs_list=code.getSubDirectories();
 
-        Iterator<Directory> subs_it=subs_list.iterator();
         String[] actual_subs=new String[0];
         int i=0;
 
-        while(subs_it.hasNext()){
+		for(i=0;i<subs_list.size();i++){
 
-            Directory sub=subs_it.next();
+            actual_subs[i]=subs_list.get(i).getName();
 
-            actual_subs[i]=sub.getName();
-            i++;
-        }
+
+		}
         assertArrayEquals(expected_subs,actual_subs);
 
         String[] expected_files={"e","f"};
@@ -225,17 +211,15 @@ public class DirectoryTest{
 
         files_list=code.getFiles();
 
-        Iterator<File> files_it=files_list.iterator();
         String[] actual_files=new String[2];
         int j=0;
 
-        while(files_it.hasNext()){
+		for(j=0;j<files_list.size();j++){
 
-            File file=files_it.next();
+            actual_files[j]=files_list.get(j).getName();
 
-            actual_files[j]=file.getName();
-            j++;
-        }
+
+		}
         assertArrayEquals(expected_files,actual_files);
     }
 }
